@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>TaskMaster · 命令行任务管家</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>📋 MRXTaskMaster <span class="badge">命令行版</span></h1>
+            <p class="sub">支持 add / list / done / delete / clear / help</p>
+        </header>
+
+        <main>
+            <div class="terminal-area">
+                <div class="input-group">
+                    <span class="prompt">$></span>
+                    <input type="text" id="commandInput" placeholder="输入 help 查看所有命令..." autofocus>
+                    <button id="runBtn">执行</button>
+                </div>
+                <div id="terminalOutput" class="terminal-output">
+                    <div class="output-line">✨ 欢迎使用 MRXTaskMaster！输入 help 开始</div>
+                </div>
+            </div>
+
+            <div class="tasks-area">
+                <h2>📌 任务列表 <button id="clearStorageBtn" class="small-btn">清空全部数据</button></h2>
+                <div class="table-wrapper">
+                    <table id="taskTable">
+                        <thead>
+                            <tr>
+                                <th data-sort="id">ID ⬍</th>
+                                <th data-sort="text">任务内容 ⬍</th>
+                                <th data-sort="status">状态 ⬍</th>
+                                <th data-sort="created">创建时间 ⬍</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="taskTableBody">
+                            <tr><td colspan="5">暂无任务，试试输入：add "学习JavaScript"</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>💡 提示：点击表格列头可排序 | 数据自动保存到浏览器</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
